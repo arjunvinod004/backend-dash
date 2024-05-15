@@ -8,8 +8,8 @@ const collection=require('./mongoose')
 const multer= require('multer')
 const path= require('path')
 app.use(express.json())
-
-app.use(cors())
+app.use(cors({origin:'backend-dash-chi.vercel.app',
+             methods:'GET','POST','PUT'}))
 
 app.use(bodyParser.json({ limit: '500mb' }));
 app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
 
 app.get('/',(req,res)=>{
     res.send('<h1> hi node</h1>')
+    res.send('hello')
 })
 
 const storage= multer.diskStorage({
