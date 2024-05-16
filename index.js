@@ -4,6 +4,7 @@ const cors=require('cors')
 const app= express()
 const bodyParser= require('body-parser')
 const collection=require('./mongoose')
+const port = process.env.PORT || 8000
 // const collections=require('./users')
 const multer= require('multer')
 const path= require('path')
@@ -124,5 +125,5 @@ app.delete('/deleteusers/:id',(req,res)=>{
 })
 
 app.listen(8000,()=>{
-console.log('connected😊');
+console.log(`connected to ${port} `);
 })
