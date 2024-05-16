@@ -8,7 +8,7 @@ const collection=require('./mongoose')
 const multer= require('multer')
 const path= require('path')
 app.use(express.json())
-app.use(cors({origin:'backend-dash-chi.vercel.app',
+app.use(cors({
              methods:'GET','POST','PUT'}))
 
 app.use(bodyParser.json({ limit: '500mb' }));
