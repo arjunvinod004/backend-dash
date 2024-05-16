@@ -9,8 +9,7 @@ const port = process.env.PORT || 8000
 const multer= require('multer')
 const path= require('path')
 app.use(express.json())
-app.use(cors({
-             methods:'GET','POST','PUT'}))
+app.use(cors())
 
 app.use(bodyParser.json({ limit: '500mb' }));
 app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
