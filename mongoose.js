@@ -1,9 +1,9 @@
 const mongoose= require('mongoose');
-const mongodb_url = "mongodb+srv://arjunvt67:arjun67vt@cluster0.9e71qs9.mongodb.net/dashboard"
-mongoose.connect(mongodb_url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+require('dotenv').config();
+console.log(process.env.MONGODB_URL);
+// const mongodb_url = process.env.MONGODB_URL;
+const mongodb_url = "mongodb+srv://arjunvt67:arjun67vt@cluster0.9e71qs9.mongodb.net/databaseName?retryWrites=true&w=majority"
+mongoose.connect(mongodb_url)
 .then(()=>{
     console.log(`mongodb connected ${mongodb_url}`);
     })

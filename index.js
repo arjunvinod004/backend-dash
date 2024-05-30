@@ -5,6 +5,8 @@ const app= express()
 const bodyParser= require('body-parser')
 const collection=require('./mongoose')
 const port =  8000
+// const path = require('path');
+require('dotenv').config(); // Load environment variables
 
 // const collections=require('./users')
 const multer= require('multer')
