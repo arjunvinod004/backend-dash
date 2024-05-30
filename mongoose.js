@@ -1,6 +1,9 @@
-const mongoose= require('mongoose')
-const mongodb_url =  'mongodb+srv://arjunvt67:arjun67vt@cluster0.9e71qs9.mongodb.net/'
-mongoose.connect(mongodb_url)
+const mongoose= require('mongoose');
+const mongodb_url = "mongodb+srv://arjunvt67:arjun67vt@cluster0.9e71qs9.mongodb.net/dashboard"
+mongoose.connect(mongodb_url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 .then(()=>{
     console.log(`mongodb connected ${mongodb_url}`);
     })
