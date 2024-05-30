@@ -4,11 +4,11 @@ const cors=require('cors')
 const app= express()
 const bodyParser= require('body-parser')
 const collection=require('./mongoose')
+const port = process.env.PORT || 8000
 // const collections=require('./users')
 const multer= require('multer')
 const path= require('path')
 app.use(express.json())
-
 app.use(cors())
 
 app.use(bodyParser.json({ limit: '500mb' }));
@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
 
 app.get('/',(req,res)=>{
     res.send('<h1> hi node</h1>')
+    res.send('hello')
 })
 
 const storage= multer.diskStorage({
@@ -59,29 +60,6 @@ app.post('/users',(req,res) => {
 
 
 
-
-// app.post('/users', upload, async (req, res) => {
-//     try {
-//         const { name, email, age } = req.body;
-//         const image = req.file;
-
-//         // Create new user document
-//         const newUser = new collection({
-//             name,
-//             email,
-//             age,
-//             image
-//         });
-
-//         // Save user to MongoDB
-//         await newUser.save();
-
-//         res.status(201).send('User added successfully');
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).send('Internal Server Error');
-//     }
-// });
 
 
 
@@ -123,5 +101,5 @@ app.delete('/deleteusers/:id',(req,res)=>{
 })
 
 app.listen(8000,()=>{
-console.log('connected😊');
+console.log(`connected to ${port} `);
 })
