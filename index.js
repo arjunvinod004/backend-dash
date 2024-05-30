@@ -4,7 +4,7 @@ const cors=require('cors')
 const app= express()
 const bodyParser= require('body-parser')
 const collection=require('./mongoose')
-const port = process.env.PORT || 8000
+const port =  8000
 
 // const collections=require('./users')
 const multer= require('multer')
