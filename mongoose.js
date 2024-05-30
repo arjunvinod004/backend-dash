@@ -1,5 +1,6 @@
 const mongoose= require('mongoose')
-mongoose.connect('mongodb+srv://arjunvt67:arjun67vt@cluster0.9e71qs9.mongodb.net/dashboard')
+const mongodb_url = 'mongodb+srv://arjunvt67:arjun67vt@cluster0.9e71qs9.mongodb.net/dashboard'
+mongoose.connect(process.env.PORT ||mongodb_url)
 .then(()=>{
     console.log('mongodb connected');
     })
