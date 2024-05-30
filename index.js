@@ -5,6 +5,7 @@ const app= express()
 const bodyParser= require('body-parser')
 const collection=require('./mongoose')
 const port = process.env.PORT || 8000
+
 // const collections=require('./users')
 const multer= require('multer')
 const path= require('path')
@@ -14,29 +15,33 @@ app.use(cors())
 app.use(bodyParser.json({ limit: '500mb' }));
 app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
 
+
+
 // app.use(express.urlencoded({ extended: false }));
 
 // app.use(express.urlencoded({ extended: true }));
 
+
+
 app.get('/',(req,res)=>{
     res.send('<h1> hi node</h1>')
-    res.send('hello')
+    
 })
 
-const storage= multer.diskStorage({
-    destination:(req,file,cb)=>{
-        cb(null,'public/images')
-    },
-    filename:(req,file,cb)=>{
-        cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
-    }
-});
+// const storage= multer.diskStorage({
+//     destination:(req,file,cb)=>{
+//         cb(null,'public/images')
+//     },
+//     filename:(req,file,cb)=>{
+//         cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
+//     }
+// });
 
 
 
-const upload= multer({
-    storage:storage
-})
+// const upload= multer({
+//     storage:storage
+// })
 
 // app.post('/upload',upload.single('file'),(req,res)=>{
 //     collection.create({image:req.file.filename})
